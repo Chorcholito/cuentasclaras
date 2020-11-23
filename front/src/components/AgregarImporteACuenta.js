@@ -11,8 +11,8 @@ const [importe,setImportes]=useState('');
 
 const dispatch = useDispatch();
 
-const importesCargados = useSelector(state=>state.importesCargados);
-
+//const importesCargados = useSelector(state=>state.cuentas);
+//console.log(importesCargados);
 
  const crypto = require('crypto');
  var id = crypto.randomBytes(20).toString('hex');
@@ -25,11 +25,12 @@ const importesCargados = useSelector(state=>state.importesCargados);
 // }
 const agregarImporte = ()=>{
 
-    console.log(" ID:"+propiedades.idCuenta+" valor:"+importe);
+ //   console.log(" ID:"+propiedades.idCuenta+" valor:"+importe);
 
     let importesCargados={
+        idCuenta:propiedades.idCuenta,
         idImporte:id,
-        importe:100
+        importe:importe
     }
     dispatch(agregarImporteACuentaAction(importesCargados));
 

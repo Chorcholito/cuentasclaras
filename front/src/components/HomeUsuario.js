@@ -9,12 +9,13 @@ const HomeUsuario = () => {
     const cuentas= useSelector((state)=>state.cuentas);
     const dispatch = useDispatch();
     
- 
+    
     
     return (
         <div>
             {
                 cuentas.map(cuenta=>{
+                  
                     return(
                         <div key={cuenta.id}>
                             <p>{cuenta.nombre}</p>
@@ -28,6 +29,7 @@ const HomeUsuario = () => {
                             <Link to={`/agregarImporte/${cuenta.id}`} > agregar Importe</Link>
                         </div>
                     )
+                    
                 })
             }
         </div>
